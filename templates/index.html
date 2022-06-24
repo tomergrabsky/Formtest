@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Form</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="assignform">
+        <div class="container">
+            <h1>ניסוי</h1><br><br>
+            <h2>פרטים אישיים</h2>
+            <form method="GET" class="myform" direction="rtl">
+                    <br><label class="name">מין:</label><br>
+                    <input type="radio" id="html" name="fav_language" value="HTML" required>זכר
+                    <br>
+
+
+                    <br> <label class="email">Email:</label>
+                    <input type="text" name="myemail" inputmode="email" required>
+
+                <div class="form-item">
+                    <br> <label class="dob">Date of Birth:</label>
+                    <input type="text" name="mydob" required>
+                </div>
+                <div class="form-item">
+                    <br> <label class="about">About Yourself:</label> <textarea name="About Yourself" class="about"
+                        cols="35" rows="0" required></textarea>
+                </div>
+                <div class="form-item">
+                    <div class="form-group col-md-3">
+                        <br><label class="captcha">Enter Captcha:</label>
+                       <input type="text" class="recaptcha" readonly id="capt">
+                    </div>
+                    <div class="form-group col-md-4">
+                       <br><input type="text" class="recaptcha" id="textinput">
+                    </div>
+                </div>
+                <br><button onclick="validcap()" class="btn">Submit</button>
+            </form>
+
+            <p>Captcha is Not Visible <img src="img/5916895.png" alt="" width="20px" onclick="cap()"></p>
+            <p id="countdown">3:00</p>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+
+<form action="/action_page.php">
+  <p>Please select your favorite Web language:</p>
+  <input type="radio" id="html" name="fav_language" value="HTML">
+  <label for="html">HTML</label><br>
+  <input type="radio" id="css" name="fav_language" value="CSS">
+  <label for="css">CSS</label><br>
+  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+  <label for="javascript">JavaScript</label>
+
+  <br>
+
+  <p>Please select your age:</p>
+  <input type="radio" id="age1" name="age" value="30">
+  <label for="age1">0 - 30</label><br>
+  <input type="radio" id="age2" name="age" value="60">
+  <label for="age2">31 - 60</label><br>
+  <input type="radio" id="age3" name="age" value="100">
+  <label for="age3">61 - 100</label><br><br>
+</form>
+
+</body>
+
+</html>

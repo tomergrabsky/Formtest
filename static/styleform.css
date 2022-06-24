@@ -1,0 +1,179 @@
+.container{
+    width: 65%;
+    height: 10%;
+    color: #8f9bad;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ebebeb;
+    box-shadow: none;
+    direction: rtl;
+    text-align:  center;
+    font-family: "Tahoma", Times, serif;
+    border-radius: 25px;
+}
+
+div.fixed {
+  position: fixed;
+  border: 4px solid red;
+  width: 60%;
+  right: 20%;
+}
+
+.countdown {
+  display: grid;
+  margin: 1em auto;
+  width: 10em;
+  height: 10em;
+}
+.countdown::after {
+  grid-column: 1;
+  grid-row: 1;
+  place-self: center;
+  font: 3em/2 ubuntu mono, consolas, monaco, monospace;
+  animation: num 36s steps(1) infinite;
+  content: "0:" counter(s, decimal-leading-zero);
+}
+
+@keyframes num {
+  0% {
+    counter-reset: s 33;
+  }
+  3% {
+    counter-reset: s 32;
+  }
+  6% {
+    counter-reset: s 31;
+  }
+  9% {
+    counter-reset: s 30;
+  }
+  12% {
+    counter-reset: s 29;
+  }
+  15% {
+    counter-reset: s 28;
+  }
+  18% {
+    counter-reset: s 27;
+  }
+  21% {
+    counter-reset: s 26;
+  }
+  24% {
+    counter-reset: s 25;
+  }
+  27% {
+    counter-reset: s 24;
+  }
+  30% {
+    counter-reset: s 23;
+  }
+  33% {
+    counter-reset: s 22;
+  }
+  36% {
+    counter-reset: s 21;
+  }
+  39% {
+    counter-reset: s 20;
+  }
+  42% {
+    counter-reset: s 19;
+  }
+  45% {
+    counter-reset: s 18;
+  }
+  48% {
+    counter-reset: s 17;
+  }
+  51% {
+    counter-reset: s 16;
+  }
+  54% {
+    counter-reset: s 15;
+  }
+  57% {
+    counter-reset: s 14;
+  }
+  60% {
+    counter-reset: s 13;
+  }
+  63% {
+    counter-reset: s 12;
+  }
+  66% {
+    counter-reset: s 11;
+  }
+  69% {
+    counter-reset: s 10;
+  }
+  72% {
+    counter-reset: s 9;
+  }
+  75% {
+    counter-reset: s 8;
+  }
+  78% {
+    counter-reset: s 7;
+  }
+  81% {
+    counter-reset: s 6;
+  }
+  84% {
+    counter-reset: s 5;
+  }
+  87% {
+    counter-reset: s 4;
+  }
+  91% {
+    counter-reset: s 3;
+  }
+  94% {
+    counter-reset: s 2;
+  }
+  97% {
+    counter-reset: s 1;
+  }
+  100% {
+    counter-reset: s 0;
+  }
+}
+svg {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+[r] {
+  fill: none;
+  stroke: silver;
+}
+[r] + [r] {
+  transform: rotate(-90deg);
+  stroke-linecap: round;
+  stroke: #8A9B0F;
+  animation: arc 33s linear infinite;
+  animation-name: arc, col;
+}
+
+@keyframes arc {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+}
+@keyframes col {
+  0% {
+    stroke: #8A9B0F;
+  }
+  25% {
+    stroke: #F8CA00;
+  }
+  50% {
+    stroke: #E97F02;
+  }
+  75% {
+    stroke: #BD1550;
+  }
+  100% {
+    stroke: #490A3D;
+  }
+}

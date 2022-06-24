@@ -1,0 +1,115 @@
+input{
+    width: 85%;
+    height: 30%;
+    text-align: center;
+    margin: 2px;
+    padding: 7px;
+    border-radius: 2px;
+    color: #545c5c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ebebeb;
+    box-shadow: none;
+    direction: rtl;
+}
+input:focus{
+    direction: rtl;
+    border-color: #3bbedb;
+    outline: 0;
+    box-shadow: none;
+}
+body{
+    text-align: center;
+}
+.container{
+    width: 35%;
+    height: 10%;
+    color: #8f9bad;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ebebeb;
+    box-shadow: none;
+    direction: rtl;
+    text-align:  center;
+}
+.container:focus{
+     border-color: #3bbedb;
+    outline: 0;
+    box-shadow: none;
+    direction: rtl;
+}
+#countdown{
+    margin: 5px;
+    padding: 8px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    width: 60px;
+    color: #fff;
+    padding: 9.5px 36px;
+    background-color: #6e72fc;
+    background-image: linear-gradient(315deg, #6e72fc 0%, #3bbedb 74%);
+    background-size: 200% auto;
+    direction: rtl;
+}
+.btn{
+    width: 65%;
+    padding: 10px;
+    border: 0;
+    border-radius: 25px;
+    color: #fff;
+    padding: 9.5px 36px;
+    background-color: #6e72fc;
+    background-image: linear-gradient(315deg, #6e72fc 0%, #3bbedb 74%);
+    background-size: 200% auto;
+    direction: rtl;
+}
+
+textarea{
+    color: #8f9bad;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ebebeb;
+    box-shadow: none;
+    direction: rtl;
+}
+textarea:focus{
+    border-color: #3bbedb;
+    outline: 0;
+    box-shadow: none;
+}
+h1{
+    color: black;
+    direction: rtl;
+}
+label{
+    color: red;
+    direction: rtl;
+}
+
+label input[type="radio"] {
+    display: none;
+}
+label input[type="radio"] ~ span {
+    position: relative;
+    display: inline-block;
+    padding: 3px 0 3px 25px;
+}
+label input[type="radio"] ~ span:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    transition: all 300ms ease-in-out;
+}
+label input[type="radio"]:checked ~ span:before {
+    border: 5px solid #29d;
+}

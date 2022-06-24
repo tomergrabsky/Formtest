@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html dir="rtl" style="font-family: 'Tahoma', Times, serif;">
+<head>
+      <link rel="stylesheet" href="/static/styleform.css">
+    <script>
+        function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            location.replace("out")
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var fiveMinutes = 33,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+    </script>
+</head>
+<body style="background-color:#E6F4FC;">
+<center>
+
+<h1>ניסוי</h1><br>
+
+<div class="fixed">
+    <h2>זמן שנותר לסיום השאלון</h2>
+<div class="countdown">
+  <svg viewBox="-50 -50 100 100" stroke-width="10">
+    <circle r="45"></circle>
+    <circle r="45" stroke-dasharray="282.7433388230814" stroke-dashoffset="282.7433388230814px"></circle>
+  </svg>
+</div>
+</div>
+
+<span id="time"></span>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<h2>פרטים אישיים</h2>
+  <br>
+
+  <form action="/save" method="post" id="nameform">
+
+        <div class="container">
+          <p>
+    <h3 style="color:black;"><b>מין:</b></h3>
+      <input type="radio" id="male" name="sex" value="male" required="required">
+      <label for="male">זכר</label>
+      <input type="radio" id="female" name="sex" value="female">
+      <label for="female">נקבה</label>
+      <input type="radio" id="other" name="sex" value="other">
+      <label for="other">אחר</label>
+          </p>
+        </div>
+    <br>
+    <br>
+    <div class="container">
+  <p>    <h3 style="color:black;"><b>גיל:</b></h3>
+  <input type="number" id="age" name="age" required="required">
+    </p>
+  <br>
+    </div><br>
+    <div class="container">
+   <p>    <h3 style="color:black;"><b>השכלה:</b></h3>
+  <input type="radio" id="yesodi" name="edu" value="yesodi" required="required">
+  <label for="yesodi">יסודית</label>
+  <input type="radio" id="tichon" name="edu" value="tichon">
+  <label for="tichon">תיכונית</label>
+  <input type="radio" id="handesai" name="edu" value="handesai">
+  <label for="handesai">הנדסאי/ת</label>
+  <input type="radio" id="first" name="edu" value="first">
+  <label for="first">תואר ראשון</label>
+  <input type="radio" id="sec" name="edu" value="sec">
+  <label for="sec">תואר שני</label>
+  <input type="radio" id="firststud" name="edu" value="firststud">
+  <label for="firststud">סטודנט לתואר ראשון</label>
+  <input type="radio" id="secstud" name="edu" value="secstud">
+  <label for="secstud">סטודנט לתואר שני</label>
+   </p>
+    </div>
+    <br>
+    <div class="container">
+     <p><h3 style="color:black;"><b>במידה ואתה עובד, מהו תחום הפעילות של הארגון?</b></h3>
+  <input type="radio" id="soft" name="org" value="soft" required="required">
+  <label for="soft">תוכנה</label>
+  <input type="radio" id="hard" name="org" value="hard">
+  <label for="hard">חומרה</label>
+  <input type="radio" id="net" name="org" value="net">
+  <label for="net">תקשורת</label>
+  <input type="radio" id="edu" name="org" value="edu">
+  <label for="edu">אקדמיה/חינוך</label>
+  <input type="radio" id="mark" name="org" value="mark">
+  <label for="mark">שיווקי</label>
+  <input type="radio" id="stud" name="org" value="stud">
+  <label for="stud">אינני עובד (סטודנט)</label>
+  <input type="radio" id="other-org" name="org" value="other-org" required="required">
+  <label for="other-org">אחר</label>
+   </p>
+    </div>
+<br>
+    <div class="container">
+       <p><h3 style="color:black;"><b>במידה ואתה עובד, מהו תפקידך בארגון?</b></h3>
+  <input type="radio" id="ceo" name="job" value="ceo" required="required">
+  <label for="ceo">מנכ"ל/ית או סמנכ"ל/ית</label>
+  <input type="radio" id="it" name="job" value="it">
+  <label for="it">מנהל/ת מערכות מידע</label>
+  <input type="radio" id="proj" name="job" value="proj">
+  <label for="proj">מנהל/ת פרויקטים</label>
+  <input type="radio" id="tl" name="job" value="tl">
+  <label for="tl">ראש צוות בפרויקט</label><br>
+  <input type="radio" id="tm" name="job" value="tm">
+  <label for="tm">חבר/ת צוות בפרויקט</label>
+  <input type="radio" id="prof" name="job" value="prof">
+  <label for="prof">מנהל/ת מקצועי/ת (משאבי אנוש, כספים וכו')</label>
+  <input type="radio" id="student" name="job" value="student">
+  <label for="student">אינני עובד (סטודנט)</label>
+  <input type="radio" id="other-job" name="job" value="other-job">
+  <label for="other-job">אחר</label>
+   </p>
+    </div>
+  <br>
+    <div class="container">
+    <p><h3 style="color:black;"><b>מספר שנות ניסיון מקצועי:</b></h3>
+
+  <input type="number" id="exp" name="exp" required="required">
+    </p>
+    </div>
+  <br>
+
+  <div class="container">
+         <p><h3 style="color:black;"><b>באיזו מידה הנך מרגיש לחץ כעת?</b></h3>
+           <label dir="rtl" align="right">
+  <input type="radio" id="no" name="stress" value="no" required="required">
+  <label for="no">אינני חש/ה לחץ כלל</label>
+  <input type="radio" id="low" name="stress" value="low">
+  <label for="low">חש/ה לחץ במידה מועטה</label>
+  <input type="radio" id="med" name="stress" value="med">
+  <label for="med">חש/ה לחץ במידה בינונית</label>
+  <input type="radio" id="high" name="stress" value="high">
+  <label for="high">חש/ה לחץ במידה רבה</label>
+</label>
+   </p>
+  </div>
+  <br>
+<br><h1>אנא ענה/עני על השאלה הבאה:</h1>
+  <h2>
+ <br> את.ה מנהל.ת בחברת Monday אשר מפתחת מוצר לניהול משימות.
+<br>  הינך נדרש.ת לבחור באחת משתי חלופות, אשר שוות בהיבטי לוח-זמנים ותקציב.
+<br>
+    באיזו חלופה היית בוחר.ת?
+    </h2>
+
+    <h3>
+    <input type="radio" id="res1" name="quest" value="res1" required="required">
+  <label for="soft">שדרוג המסך המרכזי במערכת אשר יקטין את זמני טעינת המסך ב-50% ויביא לחווית לקוח טובה יותר. </label><br>
+  <input type="radio" id="res2" name="quest" value="res2">
+  <label for="hard">שדרוג הנדסי של המערכת אשר יקטין את צריכת משאבי הענן ב-50% ויביא לחסכון בהוצאות החברה.</label><br>
+</h3>
+  <br>
+        <input type="hidden" id="timer" name="timer" value="0">
+        </form><br>
+  <button type="submit" form="nameform" value="Submit" style="height: 40px; width: 100px;">סיים ושלח</button>
+
+</center>
+<br>
+<br>
+</body>
+</html>
