@@ -2,10 +2,49 @@
 <html dir="rtl" style="font-family: 'Tahoma', Times, serif;">
 <head>
       <link rel="stylesheet" href="/static/styleform.css">
+        <script>
+         var isDelay = 0
+
+        function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            ++timer
+            window.isDelay = 1
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var fiveMinutes = 3,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+
+    function AddIsDelay(){
+
+        var formInfo = document.forms['formquest2'];
+        formInfo.elements["isDelay"].value = isDelay;
+    }
+
+    </script>
+        קבוצה {{ group }}
 </head>
 <body style="background-color:#E6F4FC;">
 <center>
 <br><h1>אנא ענה/עני על השאלה הבאה(2):</h1>
+     <div class="fixed">
+    <h1 style="color:red;">לרשותך <span id="time">00:20</span> דקות!</h1></div>
+    <br><br><br><br><br><br>
   <h2>
  <br> את.ה מנהל.ת בחברת Monday אשר מפתחת מוצר לניהול משימות.
 <br>  הינך נדרש.ת לבחור באחת משתי חלופות, אשר שוות בהיבטי לוח-זמנים ותקציב.
@@ -15,15 +54,15 @@
     <br>
     <h3>
      <form action="/save_quest2" method="post" id="formquest2">
-    <input type="radio" id="res1" name="quest" value="res1" required="required">
+    <input type="radio" id="res1" name="quest2" value="1" required="required">
   <label for="soft">שדרוג המסך המרכזי במערכת אשר יקטין את זמני טעינת המסך ב-50% ויביא לחווית לקוח טובה יותר. </label><br><br>
-  <input type="radio" id="res2" name="quest" value="res2">
+  <input type="radio" id="res2" name="quest2" value="2">
   <label for="hard">שדרוג הנדסי של המערכת אשר יקטין את צריכת משאבי הענן ב-50% ויביא לחסכון בהוצאות החברה.</label><br>
 
   <br>
-        <input type="hidden" id="timer" name="timer" value="1">
+        <input type="hidden" name="isDelay" value=""/>
         </form><br>
-  <button type="submit" form="formquest2" value="Submit" style="height: 40px; width: 100px;">המשך</button>
+  <button type="submit" form="formquest2" value="Submit" onclick="AddIsDelay();" style="height: 40px; width: 100px;">המשך</button>
     </h3>
 </center>
 <br>

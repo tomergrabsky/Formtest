@@ -26,6 +26,7 @@ window.onload = function () {
     startTimer(fiveMinutes, display);
 };
     </script>
+    קבוצה {{ group }}
 </head>
 <body style="background-color:#E6F4FC;">
 <center>
@@ -36,16 +37,16 @@ window.onload = function () {
 <h2>פרטים אישיים</h2>
   <br>
 
-  <form action="/save" method="post" id="nameform">
+  <form action="/save_details" method="post" id="nameform">
 
         <div class="container">
           <p>
     <h3 style="color:black;"><b>מין:</b></h3>
-      <input type="radio" id="male" name="sex" value="male" required="required">
+      <input type="radio" id="male" name="sex" value="0" required="required">
       <label for="male">זכר</label>
-      <input type="radio" id="female" name="sex" value="female">
+      <input type="radio" id="female" name="sex" value="1">
       <label for="female">נקבה</label>
-      <input type="radio" id="other" name="sex" value="other">
+      <input type="radio" id="other" name="sex" value="2">
       <label for="other">אחר</label>
           </p>
         </div>
@@ -59,59 +60,59 @@ window.onload = function () {
     </div><br>
     <div class="container">
    <p>    <h3 style="color:black;"><b>השכלה:</b></h3>
-  <input type="radio" id="yesodi" name="edu" value="yesodi" required="required">
+  <input type="radio" id="yesodi" name="edu" value="0" required="required">
   <label for="yesodi">יסודית</label>
-  <input type="radio" id="tichon" name="edu" value="tichon">
+  <input type="radio" id="tichon" name="edu" value="1">
   <label for="tichon">תיכונית</label>
-  <input type="radio" id="handesai" name="edu" value="handesai">
+  <input type="radio" id="handesai" name="edu" value="2">
   <label for="handesai">הנדסאי/ת</label>
-  <input type="radio" id="first" name="edu" value="first">
+  <input type="radio" id="first" name="edu" value="3">
   <label for="first">תואר ראשון</label>
-  <input type="radio" id="sec" name="edu" value="sec">
+  <input type="radio" id="sec" name="edu" value="4">
   <label for="sec">תואר שני</label>
-  <input type="radio" id="firststud" name="edu" value="firststud">
+  <input type="radio" id="firststud" name="edu" value="5">
   <label for="firststud">סטודנט לתואר ראשון</label>
-  <input type="radio" id="secstud" name="edu" value="secstud">
+  <input type="radio" id="secstud" name="edu" value="6">
   <label for="secstud">סטודנט לתואר שני</label>
    </p>
     </div>
     <br>
     <div class="container">
      <p><h3 style="color:black;"><b>במידה ואתה עובד, מהו תחום הפעילות של הארגון?</b></h3>
-  <input type="radio" id="soft" name="org" value="soft" required="required">
+  <input type="radio" id="soft" name="org" value="0" required="required">
   <label for="soft">תוכנה</label>
-  <input type="radio" id="hard" name="org" value="hard">
+  <input type="radio" id="hard" name="org" value="1">
   <label for="hard">חומרה</label>
-  <input type="radio" id="net" name="org" value="net">
+  <input type="radio" id="net" name="org" value="2">
   <label for="net">תקשורת</label>
-  <input type="radio" id="edu" name="org" value="edu">
+  <input type="radio" id="edu" name="org" value="3">
   <label for="edu">אקדמיה/חינוך</label>
-  <input type="radio" id="mark" name="org" value="mark">
+  <input type="radio" id="mark" name="org" value="4">
   <label for="mark">שיווקי</label>
-  <input type="radio" id="stud" name="org" value="stud">
+  <input type="radio" id="stud" name="org" value="5">
   <label for="stud">אינני עובד (סטודנט)</label>
-  <input type="radio" id="other-org" name="org" value="other-org" required="required">
+  <input type="radio" id="other-org" name="org" value="6" required="required">
   <label for="other-org">אחר</label>
    </p>
     </div>
 <br>
     <div class="container">
        <p><h3 style="color:black;"><b>במידה ואתה עובד, מהו תפקידך בארגון?</b></h3>
-  <input type="radio" id="ceo" name="job" value="ceo" required="required">
+  <input type="radio" id="ceo" name="job" value="0" required="required">
   <label for="ceo">מנכ"ל/ית או סמנכ"ל/ית</label>
-  <input type="radio" id="it" name="job" value="it">
+  <input type="radio" id="it" name="job" value="1">
   <label for="it">מנהל/ת מערכות מידע</label>
-  <input type="radio" id="proj" name="job" value="proj">
+  <input type="radio" id="proj" name="job" value="2">
   <label for="proj">מנהל/ת פרויקטים</label>
-  <input type="radio" id="tl" name="job" value="tl">
+  <input type="radio" id="tl" name="job" value="3">
   <label for="tl">ראש צוות בפרויקט</label><br>
-  <input type="radio" id="tm" name="job" value="tm">
+  <input type="radio" id="tm" name="job" value="4">
   <label for="tm">חבר/ת צוות בפרויקט</label>
-  <input type="radio" id="prof" name="job" value="prof">
+  <input type="radio" id="prof" name="job" value="5">
   <label for="prof">מנהל/ת מקצועי/ת (משאבי אנוש, כספים וכו')</label>
-  <input type="radio" id="student" name="job" value="student">
+  <input type="radio" id="student" name="job" value="6">
   <label for="student">אינני עובד (סטודנט)</label>
-  <input type="radio" id="other-job" name="job" value="other-job">
+  <input type="radio" id="other-job" name="job" value="7">
   <label for="other-job">אחר</label>
    </p>
     </div>
@@ -127,36 +128,21 @@ window.onload = function () {
   <div class="container">
          <p><h3 style="color:black;"><b>באיזו מידה הנך מרגיש לחץ כעת?</b></h3>
            <label dir="rtl" align="right">
-  <input type="radio" id="no" name="stress" value="no" required="required">
+  <input type="radio" id="no" name="stress" value="0" required="required">
   <label for="no">אינני חש/ה לחץ כלל</label>
-  <input type="radio" id="low" name="stress" value="low">
+  <input type="radio" id="low" name="stress" value="1">
   <label for="low">חש/ה לחץ במידה מועטה</label>
-  <input type="radio" id="med" name="stress" value="med">
+  <input type="radio" id="med" name="stress" value="2">
   <label for="med">חש/ה לחץ במידה בינונית</label>
-  <input type="radio" id="high" name="stress" value="high">
+  <input type="radio" id="high" name="stress" value="3">
   <label for="high">חש/ה לחץ במידה רבה</label>
 </label>
    </p>
   </div>
   <br>
-<br><h1>אנא ענה/עני על השאלה הבאה:</h1>
-  <h2>
- <br> את.ה מנהל.ת בחברת Monday אשר מפתחת מוצר לניהול משימות.
-<br>  הינך נדרש.ת לבחור באחת משתי חלופות, אשר שוות בהיבטי לוח-זמנים ותקציב.
-<br>
-    באיזו חלופה היית בוחר.ת?
-    </h2>
-
-    <h3>
-    <input type="radio" id="res1" name="quest" value="res1" required="required">
-  <label for="soft">שדרוג המסך המרכזי במערכת אשר יקטין את זמני טעינת המסך ב-50% ויביא לחווית לקוח טובה יותר. </label><br>
-  <input type="radio" id="res2" name="quest" value="res2">
-  <label for="hard">שדרוג הנדסי של המערכת אשר יקטין את צריכת משאבי הענן ב-50% ויביא לחסכון בהוצאות החברה.</label><br>
-</h3>
   <br>
-        <input type="hidden" id="timer" name="timer" value="0">
         </form><br>
-  <button type="submit" form="nameform" value="Submit" style="height: 40px; width: 100px;">סיים ושלח</button>
+  <button type="submit" form="nameform" value="Submit" style="height: 40px; width: 100px;">המשך</button>
 
 </center>
 <br>

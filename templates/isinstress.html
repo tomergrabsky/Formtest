@@ -2,28 +2,34 @@
 <html dir="rtl" style="font-family: 'Tahoma', Times, serif;">
 <head>
       <link rel="stylesheet" href="/static/styleform.css">
+              קבוצה {{ group }}
 </head>
 <body style="background-color:#E6F4FC;">
 <center>
-<br><h1>אנא ענה/עני על השאלה הבאה(2):</h1>
-  <h2>
- <br> את.ה מנהל.ת בחברת Monday אשר מפתחת מוצר לניהול משימות.
-<br>  הינך נדרש.ת לבחור באחת משתי חלופות, אשר שוות בהיבטי לוח-זמנים ותקציב.
-<br>
-    באיזו חלופה היית בוחר.ת?
-    </h2>
-    <br>
-    <h3>
-     <form action="/save_quest2" method="post" id="formquest2">
-    <input type="radio" id="res1" name="quest" value="res1" required="required">
-  <label for="soft">שדרוג המסך המרכזי במערכת אשר יקטין את זמני טעינת המסך ב-50% ויביא לחווית לקוח טובה יותר. </label><br><br>
-  <input type="radio" id="res2" name="quest" value="res2">
-  <label for="hard">שדרוג הנדסי של המערכת אשר יקטין את צריכת משאבי הענן ב-50% ויביא לחסכון בהוצאות החברה.</label><br>
-</h3>
+
+
+<h1>שאלה אחרונה!</h1><br>
+
+  <form action="/save_stress" method="post" id="nameform">
+
+  <div class="container">
+         <p><h3 style="color:black;"><b>באיזו מידה הנך מרגיש לחץ כעת?</b></h3>
+           <label dir="rtl" align="right">
+  <input type="radio" id="no" name="stress2" value=0 required="required">
+  <label for="no">אינני חש/ה לחץ כלל</label>
+  <input type="radio" id="low" name="stress2" value=1>
+  <label for="low">חש/ה לחץ במידה מועטה</label>
+  <input type="radio" id="med" name="stress2" value=2>
+  <label for="med">חש/ה לחץ במידה בינונית</label>
+  <input type="radio" id="high" name="stress2" value=3>
+  <label for="high">חש/ה לחץ במידה רבה</label>
+</label>
+   </p>
+  </div>
   <br>
-        <input type="hidden" id="timer" name="timer" value="1">
+  <br>
         </form><br>
-  <button type="submit" form="formquest2" value="Submit" style="height: 40px; width: 100px;">המשך</button>
+  <button type="submit" form="nameform" value="Submit" style="height: 40px; width: 100px;">סיום</button>
 
 </center>
 <br>
