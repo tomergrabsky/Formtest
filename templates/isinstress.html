@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html dir="rtl" style="font-family: 'Tahoma', Times, serif;">
+<head>
+      <link rel="stylesheet" href="/static/styleform.css">
+</head>
+<body style="background-color:#E6F4FC;">
+<center>
+<br><h1>אנא ענה/עני על השאלה הבאה(2):</h1>
+  <h2>
+ <br> את.ה מנהל.ת בחברת Monday אשר מפתחת מוצר לניהול משימות.
+<br>  הינך נדרש.ת לבחור באחת משתי חלופות, אשר שוות בהיבטי לוח-זמנים ותקציב.
+<br>
+    באיזו חלופה היית בוחר.ת?
+    </h2>
+    <br>
+    <h3>
+     <form action="/save_quest2" method="post" id="formquest2">
+    <input type="radio" id="res1" name="quest" value="res1" required="required">
+  <label for="soft">שדרוג המסך המרכזי במערכת אשר יקטין את זמני טעינת המסך ב-50% ויביא לחווית לקוח טובה יותר. </label><br><br>
+  <input type="radio" id="res2" name="quest" value="res2">
+  <label for="hard">שדרוג הנדסי של המערכת אשר יקטין את צריכת משאבי הענן ב-50% ויביא לחסכון בהוצאות החברה.</label><br>
+</h3>
+  <br>
+        <input type="hidden" id="timer" name="timer" value="1">
+        </form><br>
+  <button type="submit" form="formquest2" value="Submit" style="height: 40px; width: 100px;">המשך</button>
+
+</center>
+<br>
+<br>
+</body>
+</html>
