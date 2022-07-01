@@ -43,6 +43,8 @@ def group0():
     groupid = 0
     global tmstmp
     tmstmp = datetime.now(tz)
+    global isQuest2Delay
+    isQuest2Delay = -1
     return render_template("details.html", group=groupid)
 
 
@@ -152,7 +154,7 @@ def save_stress():
 
     with open(path, mode='a', newline="") as file:
         writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        writer.writerow([tmstmp, sex, age, edu, org, job, exp, stress, quest1, quest2, stress2, isQuest2Delay])
+        writer.writerow([tmstmp, groupid, sex, age, edu, org, job, exp, stress, quest1, quest2, stress2, isQuest2Delay])
     file.close()
 
     return render_template("thanks.html", group=groupid)
