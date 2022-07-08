@@ -17,6 +17,8 @@ stress = 0
 quest1 = 0
 quest2 = 0
 isQuest2Delay = 0
+quest1_for_who = 0
+quest2_for_who = 0
 
 
 path = 'C:\\temp\\data.csv'
@@ -122,19 +124,33 @@ def out():
 def save_quest1():
 
     global quest1
-    quest1 = request.form.get("quest1")
+    quest1 = int(request.form.get("quest1"))
+
+    global quest1_for_who
+    if groupid == 0 or groupid == 2:
+        if quest1 == 1:
+            quest1_for_who = 1
+        if quest1 == 2:
+            quest1_for_who = 2
+    print(quest1_for_who)
+    if groupid == 1 or groupid == 3:
+        if quest1 == 1:
+            quest1_for_who = 2
+        if quest1 == 2:
+            quest1_for_who = 1
 
     if groupid == 0:
         return render_template("quest2.html", group=groupid)
 
     if groupid == 1:
-        return render_template("quest2-timer1.html", group=groupid)
+        return render_template("quest2-timer1-org-first.html", group=groupid)
 
     if groupid == 2:
-        return render_template("quest2-timer2.html", group=groupid)
+        return render_template("quest2-timer2-client-first.html", group=groupid)
 
     if groupid == 3:
-        return render_template("quest2-timer3.html", group=groupid)
+        return render_template("quest2-timer3-org-first.html", group=groupid)
+
 
 @app.route('/save_quest2', methods=['POST'])
 def save_quest2():
@@ -143,7 +159,20 @@ def save_quest2():
     isQuest2Delay = request.form.get("isDelay")
 
     global quest2
-    quest2 = request.form.get("quest2")
+    quest2 = int(request.form.get("quest2"))
+
+    global quest2_for_who
+    if groupid == 0 or groupid == 2 or groupid == 4 or groupid == 6:
+        if quest2 == 1:
+            quest2_for_who = 1
+        if quest2 == 2:
+            quest2_for_who = 2
+    else:
+        if quest2 == 1:
+            quest2_for_who = 2
+        if quest2 == 2:
+            quest2_for_who = 1
+
     return render_template("isinstress.html", group=groupid)
 
 
@@ -154,7 +183,8 @@ def save_stress():
 
     with open(path, mode='a', newline="") as file:
         writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        writer.writerow([tmstmp, groupid, sex, age, edu, org, job, exp, stress, quest1, quest2, stress2, isQuest2Delay])
+        writer.writerow([tmstmp, groupid, sex, age, edu, org, job, exp, stress, quest1, quest1_for_who, quest2,
+                         quest2_for_who, stress2, isQuest2Delay])
     file.close()
 
     return render_template("thanks.html", group=groupid)
@@ -173,21 +203,25 @@ def get_students_list():
     exp = request.form.get("exp")
     stress = request.form.get("stress")
 
-    if groupid == 0 or groupid == 1 or groupid == 2 or groupid == 3:
-        return render_template("quest1.html", group=groupid)
+    if groupid == 0 or groupid == 1 or groupid ==2 or groupid == 3:
+        if groupid == 0 or groupid == 2:
+            return render_template("quest1-client-first.html", group=groupid)
+        else:
+            return render_template("quest1-org-first.html", group=groupid)
 
     else:
-        global quest1
+        global quest1, quest1_for_who
         quest1 = -1
+        quest1_for_who = -1
 
         if groupid == 4:
-            return render_template("quest2-timer1.html", group=groupid)
+            return render_template("quest2-timer1-client-first.html", group=groupid)
 
         if groupid == 5:
-            return render_template("quest2-timer2.html", group=groupid)
+            return render_template("quest2-timer2-org-first.html", group=groupid)
 
         if groupid == 6:
-            return render_template("quest2-timer3.html", group=groupid)
+            return render_template("quest2-timer3-client-first.html", group=groupid)
 
 
 if __name__== "__main__":

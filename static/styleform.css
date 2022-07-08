@@ -30,108 +30,99 @@ div.fixed {
   grid-row: 1;
   place-self: center;
   font: 3em/2 ubuntu mono, consolas, monaco, monospace;
-  animation: num 36s steps(1) infinite;
+  animation: num 33s steps(1) infinite;
   content: "0:" counter(s, decimal-leading-zero);
 }
 
 @keyframes num {
   0% {
-    counter-reset: s 33;
-  }
-  3% {
-    counter-reset: s 32;
-  }
-  6% {
-    counter-reset: s 31;
-  }
-  9% {
     counter-reset: s 30;
   }
-  12% {
+  3% {
     counter-reset: s 29;
   }
-  15% {
+  7% {
     counter-reset: s 28;
   }
-  18% {
+  10% {
     counter-reset: s 27;
   }
-  21% {
+  13% {
     counter-reset: s 26;
   }
-  24% {
+  16% {
     counter-reset: s 25;
   }
-  27% {
+  20% {
     counter-reset: s 24;
   }
-  30% {
+  23% {
     counter-reset: s 23;
   }
-  33% {
+  26% {
     counter-reset: s 22;
   }
-  36% {
+  30% {
     counter-reset: s 21;
   }
-  39% {
+  33% {
     counter-reset: s 20;
   }
-  42% {
+  36% {
     counter-reset: s 19;
   }
-  45% {
+  40% {
     counter-reset: s 18;
   }
-  48% {
+  43% {
     counter-reset: s 17;
   }
-  51% {
+  46% {
     counter-reset: s 16;
   }
-  54% {
+  50% {
     counter-reset: s 15;
   }
-  57% {
+  53% {
     counter-reset: s 14;
   }
-  60% {
+  56% {
     counter-reset: s 13;
   }
-  63% {
+  60% {
     counter-reset: s 12;
   }
-  66% {
+  63% {
     counter-reset: s 11;
   }
-  69% {
+  66% {
     counter-reset: s 10;
   }
-  72% {
+  70% {
     counter-reset: s 9;
   }
-  75% {
+  73% {
     counter-reset: s 8;
   }
-  78% {
+  76% {
     counter-reset: s 7;
   }
-  81% {
+  80% {
     counter-reset: s 6;
   }
-  84% {
+  83% {
     counter-reset: s 5;
   }
-  87% {
+  86% {
     counter-reset: s 4;
   }
-  91% {
+  90% {
     counter-reset: s 3;
   }
-  94% {
+  93% {
     counter-reset: s 2;
   }
-  97% {
+  96% {
     counter-reset: s 1;
   }
   100% {

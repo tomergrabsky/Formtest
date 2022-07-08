@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html dir="rtl" style="font-family: 'Tahoma', Times, serif;">
+<head>
+      <link rel="stylesheet" href="/static/styleform.css">
+        <script>
+         var isDelay = 0
+
+ window.onload = function () {
+    var fiveMinutes = 33,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+
+    function AddIsDelay(){
+
+        var formInfo = document.forms['formquest2'];
+        formInfo.elements["isDelay"].value = isDelay;
+    }
+
+    </script>
+        קבוצה {{ group }}
+</head>
+<body style="background-color:#E6F4FC;">
+<center>
+<br><h1>אנא ענה/עני על השאלה הבאה:</h1>
+<div class="fixed">
+    <h2>זמן שנותר לסיום השאלון</h2>
+<div class="countdown">
+  <svg viewBox="-50 -50 100 100" stroke-width="10">
+    <circle r="45"></circle>
+    <circle r="45" stroke-dasharray="282.7433388230814" stroke-dashoffset="282.7433388230814px"></circle>
+  </svg>
+</div>
+</div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <h2>
+ <br> את/ה מנהל/ת בחברת Monday אשר מפתחת מוצר לניהול משימות.
+<br> עליך לבחור באחת משתי חלופות אשר שוות ערך מבחינת לוח זמנים ומשמעות כלכלית לחברה.
+<br>
+    באיזו חלופה היית בוחר/ת?
+    </h2>
+    <br>
+    <h3>
+     <form action="/save_quest2" method="post" id="formquest2">
+    <input type="radio" id="res1" name="quest2" value="1" required="required">
+  <label for="soft">שדרוג הנדסי של המערכת אשר יקטין את צריכת משאבי הענן ב- 50% ויביא לחסכון בהוצאות החברה.</label><br><br>
+  <input type="radio" id="res2" name="quest2" value="2">
+  <label for="hard">שדרוג המסך המרכזי במערכת אשר יקטין את זמני טעינת המסך ב- 50% ויביא לחווית לקוח טובה יותר.</label><br>
+
+  <br>
+        <input type="hidden" name="isDelay" value=""/>
+        </form><br>
+  <button type="submit" form="formquest2" value="Submit" onclick="AddIsDelay();" style="height: 40px; width: 100px;">המשך</button>
+    </h3>
+</center>
+<br>
+<br>
+</body>
+</html>

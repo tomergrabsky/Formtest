@@ -15,7 +15,7 @@
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = minutes + ":" + seconds;
+        display.textContent = seconds;
 
         if (--timer < 0) {
             ++timer
@@ -25,7 +25,7 @@
 }
 
 window.onload = function () {
-    var fiveMinutes = 3,
+    var fiveMinutes = 29,
         display = document.querySelector('#time');
     startTimer(fiveMinutes, display);
 };
@@ -43,19 +43,19 @@ window.onload = function () {
 <center>
 <br><h1>אנא ענה/עני על השאלה הבאה(2):</h1>
      <div class="fixed">
-    <h1 style="color:red;">לרשותך <span id="time">00:20</span> דקות!</h1></div>
+    <h1 style="color:red;">לרשותך <span id="time">30</span> שניות!</h1></div>
     <br><br><br><br><br><br>
   <h2>
- <br> את.ה מנהל.ת בחברת Monday אשר מפתחת מוצר לניהול משימות.
-<br>  הינך נדרש.ת לבחור באחת משתי חלופות, אשר שוות בהיבטי לוח-זמנים ותקציב.
+ <br> את/ה מנהל/ת בחברת Monday אשר מפתחת מוצר לניהול משימות.
+<br> עליך לבחור באחת משתי חלופות אשר שוות ערך מבחינת לוח זמנים ומשמעות כלכלית לחברה.
 <br>
-    באיזו חלופה היית בוחר.ת?
+    באיזו חלופה היית בוחר/ת?
     </h2>
     <br>
     <h3>
      <form action="/save_quest2" method="post" id="formquest2">
     <input type="radio" id="res1" name="quest2" value="1" required="required">
-  <label for="soft">שדרוג המסך המרכזי במערכת אשר יקטין את זמני טעינת המסך ב-50% ויביא לחווית לקוח טובה יותר. </label><br><br>
+  <label for="soft">שדרוג המסך המרכזי במערכת אשר יקטין את זמני טעינת המסך ב- 50% ויביא לחווית לקוח טובה יותר. </label><br><br>
   <input type="radio" id="res2" name="quest2" value="2">
   <label for="hard">שדרוג הנדסי של המערכת אשר יקטין את צריכת משאבי הענן ב-50% ויביא לחסכון בהוצאות החברה.</label><br>
 

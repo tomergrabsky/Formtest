@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html dir="rtl" style="font-family: 'Tahoma', Times, serif;">
+<head>
+      <link rel="stylesheet" href="/static/styleform.css">
+        קבוצה {{ group }}
+</head>
+<body style="background-color:#E6F4FC;">
+<center>
+<br><h1>אנא ענה/עני על השאלה הבאה:</h1>
+  <h2>
+      <br>את/ה מנהל/ת בכיר/ה בחברת wix אשר מאפשרת ללקוחותיה
+      <br> בניית אתרי אינטרנט באופן עצמאי ללא ידע טכנולוגי מקדים.
+<br>  עליך לבחור באחת משתי חלופות אשר שוות ערך מבחינת לוח זמנים ומשמעות כלכלית לחברה.
+<br>
+      באיזו חלופה היית בוחר/ת?
+    </h2>
+    <br>
+    <h3>
+     <form action="/save_quest1" method="post" id="formquest1">
+    <input type="radio" id="res1" name="quest1" value="1" required="required">
+  <label for="soft">פיתוח רכיב שיאפשר ללקוחות החברה לקצר משך פיתוח אתרים ב- 30%.</label><br><br>
+  <input type="radio" id="res2" name="quest1" value="2">
+  <label for="hard">פיתוח אלגוריתם/מנגנון שיוביל לחסכון של 30% מהוצאות החברה.</label><br>
+</h3>
+  <br>
+        <input type="hidden" id="timer" name="timer" value="1">
+        </form><br>
+  <button type="submit" form="formquest1" value="Submit" style="height: 40px; width: 100px;">המשך</button>
+
+</center>
+<br>
+<br>
+</body>
+</html>
