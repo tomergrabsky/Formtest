@@ -25,6 +25,19 @@ window.onload = function () {
         display = document.querySelector('#time');
     startTimer(fiveMinutes, display);
 };
+
+function ShowHideDivOrg() {
+        var chkYes = document.getElementById("other-org");
+        var dvtext = document.getElementById("other-org-textbox");
+        dvtext.style.display = chkYes.checked ? "block" : "none";
+        };
+
+function ShowHideDivJob() {
+        var chkYes = document.getElementById("other-job");
+        var dvtext = document.getElementById("other-job-textbox");
+        dvtext.style.display = chkYes.checked ? "block" : "none";
+        };
+
     </script>
     קבוצה {{ group }}
 </head>
@@ -72,48 +85,58 @@ window.onload = function () {
   <label for="sec">תואר שני</label>
   <input type="radio" id="firststud" name="edu" value="5">
   <label for="firststud">סטודנט לתואר ראשון</label>
-  <input type="radio" id="secstud" name="edu" value="6">
+  <br><br><input type="radio" id="secstud" name="edu" value="6">
   <label for="secstud">סטודנט לתואר שני</label>
    </p>
     </div>
     <br>
     <div class="container">
      <p><h3 style="color:black;"><b>במידה ואתה עובד, מהו תחום הפעילות של הארגון?</b></h3>
-  <input type="radio" id="soft" name="org" value="0" required="required">
+  <input type="radio" id="soft" name="org" value="0" required="required" onclick="ShowHideDivOrg()">
   <label for="soft">תוכנה</label>
-  <input type="radio" id="hard" name="org" value="1">
+  <input type="radio" id="hard" name="org" value="1" onclick="ShowHideDivOrg()">
   <label for="hard">חומרה</label>
-  <input type="radio" id="net" name="org" value="2">
+  <input type="radio" id="net" name="org" value="2" onclick="ShowHideDivOrg()">
   <label for="net">תקשורת</label>
-  <input type="radio" id="edu" name="org" value="3">
+  <input type="radio" id="edu" name="org" value="3" onclick="ShowHideDivOrg()">
   <label for="edu">אקדמיה/חינוך</label>
-  <input type="radio" id="mark" name="org" value="4">
+  <input type="radio" id="mark" name="org" value="4" onclick="ShowHideDivOrg()">
   <label for="mark">שיווקי</label>
-  <input type="radio" id="stud" name="org" value="5">
-  <label for="stud">אינני עובד (סטודנט)</label>
-  <input type="radio" id="other-org" name="org" value="6" required="required">
+  <input type="radio" id="stud" name="org" value="5" onclick="ShowHideDivOrg()">
+  <label for="stud">אינני עובד (סטודנט)</label><br><br>
+  <input type="radio" id="other-org" name="org" value="6" required="required" onclick="ShowHideDivOrg()">
   <label for="other-org">אחר</label>
+  <div id="other-org-textbox" style="display: none">
+      פרט:
+    <input type="text" id="org_other" name="org_other" />
+  </div>
    </p>
     </div>
 <br>
     <div class="container">
        <p><h3 style="color:black;"><b>במידה ואתה עובד, מהו תפקידך בארגון?</b></h3>
-  <input type="radio" id="ceo" name="job" value="0" required="required">
-  <label for="ceo">מנכ"ל/ית או סמנכ"ל/ית</label>
-  <input type="radio" id="it" name="job" value="1">
-  <label for="it">מנהל/ת מערכות מידע</label>
-  <input type="radio" id="proj" name="job" value="2">
-  <label for="proj">מנהל/ת פרויקטים</label>
-  <input type="radio" id="tl" name="job" value="3">
-  <label for="tl">ראש צוות בפרויקט</label><br>
-  <input type="radio" id="tm" name="job" value="4">
-  <label for="tm">חבר/ת צוות בפרויקט</label>
-  <input type="radio" id="prof" name="job" value="5">
-  <label for="prof">מנהל/ת מקצועי/ת (משאבי אנוש, כספים וכו')</label>
-  <input type="radio" id="student" name="job" value="6">
-  <label for="student">אינני עובד (סטודנט)</label>
-  <input type="radio" id="other-job" name="job" value="7">
+  <input type="radio" id="ceo" name="job" value="0" required="required" onclick="ShowHideDivJob()">
+  <label for="ceo">אינני עובד/ת (סטודנט)</label>
+  <input type="radio" id="it" name="job" value="1" onclick="ShowHideDivJob()">
+  <label for="it">מתכנת/ת</label>
+  <input type="radio" id="proj" name="job" value="2" onclick="ShowHideDivJob()">
+  <label for="proj">בודק/ת תוכנה</label>
+  <input type="radio" id="tl" name="job" value="3" onclick="ShowHideDivJob()">
+  <label for="tl">אנליסט/ית</label><br><br>
+  <input type="radio" id="tm" name="job" value="4" onclick="ShowHideDivJob()">
+  <label for="tm">מנהל/ת מוצר</label>
+  <input type="radio" id="prof" name="job" value="5" onclick="ShowHideDivJob()">
+  <label for="prof">מנהל/ת של מנהלי מוצר</label>
+  <input type="radio" id="student" name="job" value="6" onclick="ShowHideDivJob()">
+  <label for="student">מנהל/ת של רשצי פיתוח</label>
+  <input type="radio" id="pmo" name="job" value="7" onclick="ShowHideDivJob()">
+  <label for="student">מנהל/ת פרויקטים</label>
+  <br><br><input type="radio" id="other-job" name="job" value="8" onclick="ShowHideDivJob()">
   <label for="other-job">אחר</label>
+   <div id="other-job-textbox" style="display: none">
+      פרט:
+    <input type="text" id="job_other" name="job_other" />
+  </div>
    </p>
     </div>
   <br>
@@ -125,21 +148,6 @@ window.onload = function () {
     </div>
   <br>
 
-  <div class="container">
-         <p><h3 style="color:black;"><b>באיזו מידה הנך מרגיש לחץ כעת?</b></h3>
-           <label dir="rtl" align="right">
-  <input type="radio" id="no" name="stress" value="0" required="required">
-  <label for="no">אינני חש/ה לחץ כלל</label>
-  <input type="radio" id="low" name="stress" value="1">
-  <label for="low">חש/ה לחץ במידה מועטה</label>
-  <input type="radio" id="med" name="stress" value="2">
-  <label for="med">חש/ה לחץ במידה בינונית</label>
-  <input type="radio" id="high" name="stress" value="3">
-  <label for="high">חש/ה לחץ במידה רבה</label>
-</label>
-   </p>
-  </div>
-  <br>
   <br>
         </form><br>
   <button type="submit" form="nameform" value="Submit" style="height: 40px; width: 100px;">המשך</button>

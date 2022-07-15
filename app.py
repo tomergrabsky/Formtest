@@ -19,6 +19,8 @@ quest2 = 0
 isQuest2Delay = 0
 quest1_for_who = 0
 quest2_for_who = 0
+org_other = 'n.a'
+job_other = 'n.a'
 
 
 path = 'C:\\temp\\data.csv'
@@ -139,17 +141,7 @@ def save_quest1():
         if quest1 == 2:
             quest1_for_who = 1
 
-    if groupid == 0:
-        return render_template("quest2.html", group=groupid)
-
-    if groupid == 1:
-        return render_template("quest2-timer1-org-first.html", group=groupid)
-
-    if groupid == 2:
-        return render_template("quest2-timer2-client-first.html", group=groupid)
-
-    if groupid == 3:
-        return render_template("quest2-timer3-org-first.html", group=groupid)
+    return render_template("isinstress1-slider.html", group=groupid)
 
 
 @app.route('/save_quest2', methods=['POST'])
@@ -173,27 +165,47 @@ def save_quest2():
         if quest2 == 2:
             quest2_for_who = 1
 
-    return render_template("isinstress.html", group=groupid)
+    return render_template("isinstress2.html", group=groupid)
 
 
-@app.route('/save_stress', methods=['POST'])
+@app.route('/save_stress2', methods=['POST'])
 def save_stress():
 
     stress2 = request.form.get("stress2")
 
-    with open(path, mode='a', newline="") as file:
+    with open(path, mode='a', newline="", encoding='utf-8') as file:
         writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        writer.writerow([tmstmp, groupid, sex, age, edu, org, job, exp, stress, quest1, quest1_for_who, quest2,
+        writer.writerow([tmstmp, groupid, sex, age, edu, org, org_other, job, job_other, exp, stress, quest1, quest1_for_who, quest2,
                          quest2_for_who, stress2, isQuest2Delay])
     file.close()
 
     return render_template("thanks.html", group=groupid)
 
 
+@app.route('/save_stress1', methods=['POST'])
+def save_stress1():
+
+    global stress
+
+    stress = request.form.get("stress1")
+
+    if groupid == 0:
+        return render_template("quest2.html", group=groupid)
+
+    if groupid == 1:
+        return render_template("quest2-timer1-org-first.html", group=groupid)
+
+    if groupid == 2:
+        return render_template("quest2-timer2-client-first.html", group=groupid)
+
+    if groupid == 3:
+        return render_template("quest2-timer3-org-first.html", group=groupid)
+
+
 @app.route('/save_details', methods=['POST'])
 def get_students_list():
 
-    global sex, age, edu, org, job, exp, stress
+    global sex, age, edu, org, job, exp, job_other, org_other
 
     sex = request.form.get("sex")
     age = request.form.get("age")
@@ -201,7 +213,8 @@ def get_students_list():
     org = request.form.get("org")
     job = request.form.get("job")
     exp = request.form.get("exp")
-    stress = request.form.get("stress")
+    org_other = request.form.get("org_other")
+    job_other = request.form.get("job_other")
 
     if groupid == 0 or groupid == 1 or groupid ==2 or groupid == 3:
         if groupid == 0 or groupid == 2:
@@ -223,6 +236,10 @@ def get_students_list():
         if groupid == 6:
             return render_template("quest2-timer3-client-first.html", group=groupid)
 
+
+@app.route('/slider')
+def slider():
+    return render_template("isinstress1-slider2.html", group=groupid)
 
 if __name__== "__main__":
     app.run (host='0.0.0.0', port = 80)
