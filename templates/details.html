@@ -84,14 +84,14 @@ function ShowHideDivJob() {
   <input type="radio" id="sec" name="edu" value="4">
   <label for="sec">תואר שני</label>
   <input type="radio" id="firststud" name="edu" value="5">
-  <label for="firststud">סטודנט לתואר ראשון</label>
+  <label for="firststud">סטודנט/ית לתואר ראשון</label>
   <br><br><input type="radio" id="secstud" name="edu" value="6">
-  <label for="secstud">סטודנט לתואר שני</label>
+  <label for="secstud">סטודנט/ית לתואר שני</label>
    </p>
     </div>
     <br>
     <div class="container">
-     <p><h3 style="color:black;"><b>במידה ואתה עובד, מהו תחום הפעילות של הארגון?</b></h3>
+     <p><h3 style="color:black;"><b>במידה ואת/ה עובד/ת, מהו תחום הפעילות של הארגון?</b></h3>
   <input type="radio" id="soft" name="org" value="0" required="required" onclick="ShowHideDivOrg()">
   <label for="soft">תוכנה</label>
   <input type="radio" id="hard" name="org" value="1" onclick="ShowHideDivOrg()">
@@ -103,20 +103,20 @@ function ShowHideDivJob() {
   <input type="radio" id="mark" name="org" value="4" onclick="ShowHideDivOrg()">
   <label for="mark">שיווקי</label>
   <input type="radio" id="stud" name="org" value="5" onclick="ShowHideDivOrg()">
-  <label for="stud">אינני עובד (סטודנט)</label><br><br>
+  <label for="stud">אינני עובד/ת (סטודנט/ית)</label><br><br>
   <input type="radio" id="other-org" name="org" value="6" required="required" onclick="ShowHideDivOrg()">
   <label for="other-org">אחר</label>
   <div id="other-org-textbox" style="display: none">
-      פרט:
+      פירוט:
     <input type="text" id="org_other" name="org_other" />
   </div>
    </p>
     </div>
 <br>
     <div class="container">
-       <p><h3 style="color:black;"><b>במידה ואתה עובד, מהו תפקידך בארגון?</b></h3>
+       <p><h3 style="color:black;"><b>במידה ואת/ה עובד/ת, מהו תפקידך בארגון?</b></h3>
   <input type="radio" id="ceo" name="job" value="0" required="required" onclick="ShowHideDivJob()">
-  <label for="ceo">אינני עובד/ת (סטודנט)</label>
+  <label for="ceo">אינני עובד/ת (סטודנט/ית)</label>
   <input type="radio" id="it" name="job" value="1" onclick="ShowHideDivJob()">
   <label for="it">מתכנת/ת</label>
   <input type="radio" id="proj" name="job" value="2" onclick="ShowHideDivJob()">
@@ -134,7 +134,7 @@ function ShowHideDivJob() {
   <br><br><input type="radio" id="other-job" name="job" value="8" onclick="ShowHideDivJob()">
   <label for="other-job">אחר</label>
    <div id="other-job-textbox" style="display: none">
-      פרט:
+      פירוט:
     <input type="text" id="job_other" name="job_other" />
   </div>
    </p>
